@@ -262,44 +262,87 @@
             margin-bottom: 20px;
         }
 
-        .qr-code {
-            width: 250px;
-            height: 250px;
-            margin: 0 auto 20px;
-            background: white;
-            padding: 15px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .qr-code img {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
         .qr-description {
-            color: var(--text-muted);
+            color: #666;
             font-size: 1rem;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
         }
 
-        .momo-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background: linear-gradient(135deg, #a91079 0%, #d71e7e 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
+        .money-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .money-card {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 15px;
+            padding: 20px 15px;
+            cursor: pointer;
             transition: all 0.3s;
-            box-shadow: 0 8px 30px rgba(169, 16, 121, 0.4);
+            border: 2px solid var(--gold);
+            position: relative;
+            overflow: hidden;
         }
 
-        .momo-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(169, 16, 121, 0.6);
+        .money-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.5);
+            border-color: var(--red);
+        }
+
+        .money-card.featured {
+            background: linear-gradient(135deg, #dc2626 0%, #991b1b 100%);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(220, 38, 38, 0.4);
+        }
+
+        .money-card.featured .money-amount,
+        .money-card.featured .money-desc {
+            color: white;
+        }
+
+        .money-card.featured:hover {
+            transform: translateY(-10px) scale(1.08);
+            box-shadow: 0 20px 50px rgba(220, 38, 38, 0.6);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--gold);
+            color: var(--dark-red);
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 8px;
+            transform: rotate(10deg);
+        }
+
+        .money-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: inline-block;
+            transition: transform 0.3s;
+        }
+
+        .money-card:hover .money-emoji {
+            transform: scale(1.2) rotate(15deg);
+        }
+
+        .money-amount {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-red);
+            margin-bottom: 5px;
+        }
+
+        .money-desc {
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 500;
         }
 
         .signature {
@@ -381,6 +424,41 @@
         }
 
         /* ═══════════════════════════════════════════════════════════════════ */
+        /* TOAST NOTIFICATION */
+        /* ═══════════════════════════════════════════════════════════════════ */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: white;
+            padding: 20px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transform: translateX(500px);
+            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            z-index: 2000;
+            border: 2px solid var(--gold);
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast-icon {
+            font-size: 2rem;
+            animation: bounce 1s ease-in-out infinite;
+        }
+
+        .toast-message {
+            font-weight: 600;
+            color: var(--dark-red);
+            font-size: 1rem;
+        }
+
+        /* ═══════════════════════════════════════════════════════════════════ */
         /* RESPONSIVE */
         /* ═══════════════════════════════════════════════════════════════════ */
         @media (max-width: 768px) {
@@ -408,9 +486,19 @@
                 font-size: 1rem;
             }
 
-            .qr-code {
-                width: 200px;
-                height: 200px;
+            .money-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .toast {
+                bottom: 20px;
+                right: 20px;
+                left: 20px;
+                padding: 15px 20px;
+            }
+
+            .toast-message {
+                font-size: 0.9rem;
             }
         }
 
@@ -425,6 +513,15 @@
 
             .envelope-container {
                 padding: 25px 15px;
+            }
+
+            .money-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .money-card {
+                padding: 18px 12px;
             }
         }
     </style>
@@ -478,26 +575,43 @@
             </div>
 
             <div class="qr-section">
-                <h2 class="qr-title">Quét Mã Nhận Lì Xì 🎁</h2>
-                <div class="qr-code">
-                    <!-- QR Code placeholder - Replace with actual QR image -->
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="100" height="100" fill="white"/>
-                        <text x="50" y="50" font-size="12" text-anchor="middle" fill="#dc2626">
-                            QR Code
-                        </text>
-                        <text x="50" y="65" font-size="8" text-anchor="middle" fill="#666">
-                            (Thay bằng QR thật)
-                        </text>
-                    </svg>
-                </div>
+                <h2 class="qr-title">Chọn Mức Lì Xì 🎁</h2>
                 <p class="qr-description">
-                    Scan QR code bằng ứng dụng MoMo<br/>
-                    hoặc nhấn nút bên dưới để mở trực tiếp
+                    Chọn số tiền bạn muốn gửi lì xì đầu năm 💝
                 </p>
-                <a href="https://me.momo.vn/pwI4TzsqfDCduxUgfQFeiN" target="_blank" class="momo-button">
-                    📱 Mở MoMo Ngay
-                </a>
+                
+                <div class="money-grid">
+                    <div class="money-card" onclick="openMoMo(20000, '☕')">
+                        <div class="money-emoji">☕</div>
+                        <div class="money-amount">20.000 VNĐ</div>
+                        <div class="money-desc">Ly cà phê</div>
+                    </div>
+                    
+                    <div class="money-card" onclick="openMoMo(50000, '🍜')">
+                        <div class="money-emoji">🍜</div>
+                        <div class="money-amount">50.000 VNĐ</div>
+                        <div class="money-desc">Bữa ăn ngon</div>
+                    </div>
+                    
+                    <div class="money-card featured" onclick="openMoMo(100000, '🎮')">
+                        <div class="featured-badge">⭐ PHỔ BIẾN</div>
+                        <div class="money-emoji">🎮</div>
+                        <div class="money-amount">100.000 VNĐ</div>
+                        <div class="money-desc">Mua game mới</div>
+                    </div>
+                    
+                    <div class="money-card" onclick="openMoMo(200000, '🚀')">
+                        <div class="money-emoji">🚀</div>
+                        <div class="money-amount">200.000 VNĐ</div>
+                        <div class="money-desc">Premium tier</div>
+                    </div>
+                    
+                    <div class="money-card" onclick="openMoMo(500000, '💎')">
+                        <div class="money-emoji">💎</div>
+                        <div class="money-amount">500.000 VNĐ</div>
+                        <div class="money-desc">VIP support</div>
+                    </div>
+                </div>
             </div>
 
             <div class="signature">
@@ -582,6 +696,47 @@
                 // Start confetti when main screen appears
                 setInterval(createConfetti, 200);
             }, 1000);
+        }
+
+        // ═══════════════════════════════════════════════════════════════════
+        // MOMO PAYMENT
+        // ═══════════════════════════════════════════════════════════════════
+        function openMoMo(amount, emoji) {
+            const messages = {
+                20000: 'Cảm ơn bạn đã ủng hộ ly cà phê! ☕',
+                50000: 'Cảm ơn bạn! Mình sẽ ăn bữa ngon nhé! 🍜',
+                100000: 'Wow! Cảm ơn bạn rất nhiều! Mua game thôi! 🎮',
+                200000: 'Amazing! Cảm ơn bạn đã ủng hộ! 🚀',
+                500000: 'Quá tuyệt vời! Cảm ơn bạn VIP support! 💎'
+            };
+            
+            // Show toast notification
+            const toast = createToast(messages[amount], emoji);
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.classList.add('show');
+            }, 100);
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 500);
+            }, 3000);
+            
+            // Open MoMo link
+            setTimeout(() => {
+                window.open('https://me.momo.vn/pwI4TzsqfDCduxUgfQFeiN', '_blank');
+            }, 500);
+        }
+
+        function createToast(message, emoji) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = `
+                <span class="toast-icon">${emoji}</span>
+                <span class="toast-message">${message}</span>
+            `;
+            return toast;
         }
 
         // ═══════════════════════════════════════════════════════════════════

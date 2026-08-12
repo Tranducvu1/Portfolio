@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="800" viewBox="0 0 1280 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f0f8f6"/>
+      <stop offset="100%" stop-color="#28645a" stop-opacity="0.4"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bg)"/>
+  <rect x="80" y="70" width="1120" height="660" rx="18" fill="#ffffff"/>
+  <path d="M80 70 h1120 a18 18 0 0 1 18 18 v20 H62 v-20 a18 18 0 0 1 18-18z" fill="#f3f4f6"/>
+  <circle cx="108" cy="98" r="7" fill="#ff5f56"/>
+  <circle cx="132" cy="98" r="7" fill="#ffbd2e"/>
+  <circle cx="156" cy="98" r="7" fill="#27c93f"/>
+  <rect x="220" y="84" width="720" height="28" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="236" y="103" font-family="system-ui,sans-serif" font-size="14" fill="#6b7280">https://pkanvui.vn</text>
+  <rect x="120" y="160" width="1040" height="520" rx="14" fill="#28645a"/>
+  <rect x="200" y="280" width="880" height="280" rx="16" fill="#ffffff"/>
+  <text x="240" y="360" font-family="system-ui,sans-serif" font-size="40" font-weight="700" fill="#111111">Phong kham An Vui</text>
+  <text x="240" y="410" font-family="system-ui,sans-serif" font-size="22" fill="#6b7280">PK da khoa nho</text>
+  <text x="240" y="445" font-family="system-ui,sans-serif" font-size="18" fill="#9ca3af">Web + form dat lich</text>
+  <rect x="240" y="480" width="180" height="44" rx="22" fill="#28645a"/>
+  <text x="278" y="508" font-family="system-ui,sans-serif" font-size="16" font-weight="600" fill="#ffffff">Lien he</text>
+</svg>

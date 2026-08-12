@@ -15,7 +15,7 @@
   <title>Trần Đức Vũ · App & Web Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;0,7..72,700;1,7..72,400;1,7..72,500&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -38,7 +38,7 @@
         <a href="#about">Giới thiệu</a>
         <a href="#featured">Nổi bật</a>
         <a href="#work">Dự án</a>
-        <a href="#blog">My Blog</a>
+        <a href="myblog.html">MyBlog</a>
         <a href="#contact">Liên hệ</a>
       </nav>
       <a class="btn btn-primary btn-sm header-cta" href="tel:0345934782">0345 934 782</a>
@@ -50,7 +50,7 @@
       <a href="#about">Giới thiệu</a>
       <a href="#featured">Nổi bật</a>
       <a href="#work">Dự án</a>
-      <a href="#blog">My Blog</a>
+      <a href="myblog.html">MyBlog</a>
       <a href="#contact">Liên hệ</a>
       <a class="btn btn-primary" href="tel:0345934782">Gọi 0345 934 782</a>
     </div>
@@ -79,7 +79,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary magnetic" href="#work">Xem dự án</a>
-            <a class="btn btn-ghost magnetic" href="#contact">Liên hệ</a>
+            <a class="btn btn-ghost magnetic" href="myblog.html">MyBlog</a>
           </div>
           <div class="hero-meta">
             <div>
@@ -181,30 +181,25 @@
       </div>
     </section>
 
-    <!-- MY BLOG: SkyBooks writings + album + videos -->
-    <section class="section blog-section" id="blog">
+    <!-- Khoảnh khắc: personal photos + videos -->
+    <section class="section blog-section" id="moments">
       <div class="container">
         <div class="section-head reveal">
-          <span class="eyebrow">My Blog · SkyBooks</span>
-          <h2>Những dòng ghi chép</h2>
-          <p>Góc đọc chậm — suy nghĩ về tuổi lớn, bình yên và lòng người.</p>
+          <span class="eyebrow">Khoảnh khắc</span>
+          <h2>Ảnh &amp; video cá nhân</h2>
+          <p>
+            Life, travel &amp; behind the scenes.
+            Đọc chữ dài hơn tại <a href="myblog.html" style="color: var(--accent); font-weight: 700;">MyBlog · SkyBooks</a>.
+          </p>
         </div>
 
-        <div class="sky-feed" id="skyFeed" aria-label="Bài viết SkyBooks"></div>
-
-        <div class="blog-album reveal">
-          <div class="blog-album-head">
-            <span class="eyebrow">Album</span>
-            <h3>Ảnh đời thường</h3>
-          </div>
-          <div class="blog-gallery" id="blogGallery"></div>
-        </div>
+        <div class="blog-gallery" id="blogGallery"></div>
 
         <div class="video-block reveal">
           <div class="video-copy">
             <span class="eyebrow">Video</span>
             <h3>Behind the scenes</h3>
-            <p>Clip thực tế — chỉ xuất hiện trong mục My Blog.</p>
+            <p>Clip thực tế — showcase riêng trên trang chủ.</p>
           </div>
           <div class="video-grid">
             <div class="video-frame">

@@ -298,76 +298,7 @@
     },
   ];
 
-  /** SkyBooks journal — My Blog */
-  const skyPosts = [
-    {
-      id: "lon-co-buon",
-      date: "2024-07-16",
-      dateLabel: "16 tháng 7, 2024",
-      source: "SkyBooks",
-      title: "Làm người lớn có buồn không?",
-      emoji: "🍂",
-      lead: true,
-      paragraphs: [
-        "Càng lớn, bạn càng được nếm rõ mùi vị cô đơn của người trưởng thành. Cảm giác bản thân lạc lõng giữa dòng người náo nhiệt, nghe tiếng tim mình đập từng hồi buồn bã, chỉ biết đưa mắt nhìn quanh trong vô định.",
-        "Danh sách bạn bè ngập tràn chấm xanh đang sáng, nhưng ta lại chẳng biết nên nhắn cho cái tên nào, cuối cùng tắt máy đi. Một câu hỏi vẫn luôn âm ỉ trong lòng khi chúng ta: Liệu chia sẻ rồi, nỗi đau có thể tan biến phần nào không? Hay nó chỉ di chuyển từ cõi lòng mình sang đáy mắt của họ, như thể đang đặt thêm vào lòng họ viên đá ngầm trĩu nặng?",
-        "Thế giới của người lớn khắc nghiệt như vậy một phần là bởi áp lực từ công việc, phần kia là vì trong lòng còn nhiều nỗi niềm, nhưng chẳng tìm được ai để giãi bày.",
-      ],
-    },
-    {
-      id: "binh-yen",
-      date: "2024-07-16",
-      dateLabel: "16 tháng 7, 2024",
-      source: "SkyBooks",
-      title: "Bình yên chỉ có thế",
-      paragraphs: [
-        "Có những ngày chỉ muốn ở nhà, hoặc xa nhà thì ở yên trong căn phòng trọ của mình.",
-        "Không đi đâu, không gặp gỡ ai. Mặc một bộ quần áo và đầu tóc xuề xòa.",
-        "Không phải đeo lên một khuôn mặt hài hòa, không phải mang trên mình bộ trang phục gò bó, không phải sống vì “thiên hạ” ngoài kia.",
-        "Thật, bình yên chỉ có thế!",
-      ],
-    },
-    {
-      id: "g-mornin",
-      date: "2024-05-14",
-      dateLabel: "14 tháng 5, 2024",
-      source: "SkyBooks",
-      title: "Cuộc sống chính là như vậy",
-      kicker: "G-mornin, have a beautiful day",
-      paragraphs: [
-        "Cuộc sống chính là như vậy: có chút bận, có chút mệt, có chút khổ, có chút phiền.",
-        "Nhưng đồng thời… cũng có chút ngọt ngào, có chút vui vẻ, có chút ấm áp, có chút bất ngờ.",
-        "Cuộc sống không đơn giản, hãy cố gắng sống đơn giản nhất có thể.",
-      ],
-      cite: "Sưu tầm",
-    },
-    {
-      id: "skytalk",
-      date: "2024-03-15",
-      dateLabel: "15 tháng 3, 2024",
-      source: "SkyBooks",
-      title: "Bao nhiêu số phận là bấy nhiêu ngã rẽ",
-      kicker: "Skytalk",
-      paragraphs: [
-        "Tôi đủ lớn để hiểu rằng, mỗi năm thế giới mỗi đổi thay và lòng người cũng khác. Tuổi ấu thơ chỉ có một con đường để cùng nhau chung bước. Khi lớn lên trước mắt ta có lắm nẻo đường đời, bao nhiêu số phận là bấy nhiêu ngã rẽ, làm sao người chẳng quên người.",
-      ],
-      cite: "Nhà văn Nguyễn Nhật Ánh",
-    },
-    {
-      id: "dung-danh-gia",
-      date: "2023-09-25",
-      dateLabel: "25 tháng 9, 2023",
-      source: "SkyBooks",
-      title: "Đừng vội đánh giá",
-      paragraphs: [
-        "Mỗi người sinh ra không có mấy ai hoàn hảo, không mấy ai vẹn đầy, không mấy ai hạnh phúc. Chẳng qua họ không muốn kể than, không muốn người khác lo lắng bận tâm và có thể là xát muối vào điều đó.",
-        "Nhìn bề ngoài chỉ có thể thấy được những điều đẹp đẽ, tươi vui hoặc một phần tính cách của một ai đó chứ không thể nhìn thấy được quá trình cố gắng, nội tâm trăn trở, góc khuất đau lòng mà họ đang cố cất đi.",
-        "Thế nên, đừng vội vàng đánh giá suy xét ai khi mình không sống cuộc đời của họ.",
-      ],
-    },
-  ];
-
-  /** Personal photos — album trong My Blog */
+  /** Personal photos — chỉ dùng trong Blog */
   const blogPhotos = [
     { src: "assets/images/blog/waterfront.png", caption: "Waterfront evening" },
     { src: "assets/images/blog/city-skyline.png", caption: "City skyline" },
@@ -512,30 +443,7 @@
   renderFilters();
   renderGrid();
 
-  // ── My Blog · SkyBooks + album ──
-  const skyFeed = document.getElementById("skyFeed");
-  if (skyFeed) {
-    skyFeed.innerHTML = skyPosts
-      .map((post, i) => {
-        const title = post.emoji ? `${post.emoji} ${post.title}` : post.title;
-        const body = post.paragraphs.map((p) => `<p>${p}</p>`).join("");
-        const kicker = post.kicker ? `<p class="sky-kicker">/ ${post.kicker} /</p>` : "";
-        const cite = post.cite ? `<p class="sky-cite">— ${post.cite}</p>` : "";
-        return `
-      <article class="sky-entry ${post.lead ? "is-lead" : ""} reveal" data-stagger="${i % 4}">
-        <div class="sky-meta">
-          <span class="sky-source">${post.source}</span>
-          <span class="sky-dot" aria-hidden="true"></span>
-          <time datetime="${post.date}">${post.dateLabel}</time>
-        </div>
-        <h3>${title}</h3>
-        ${kicker}
-        <div class="sky-body">${body}${cite}</div>
-      </article>`;
-      })
-      .join("");
-  }
-
+  // ── Blog gallery (all personal photos) ──
   const galleryEl = document.getElementById("blogGallery");
   if (galleryEl) {
     galleryEl.innerHTML = blogPhotos
@@ -595,7 +503,7 @@
     if (progress) progress.style.width = `${max > 0 ? (y / max) * 100 : 0}%`;
     header?.classList.toggle("scrolled", y > 20);
 
-    const ids = ["about", "featured", "work", "blog", "contact"];
+    const ids = ["about", "featured", "work", "moments", "contact"];
     let current = "";
     ids.forEach((id) => {
       const el = document.getElementById(id);

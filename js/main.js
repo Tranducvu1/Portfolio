@@ -497,11 +497,19 @@
 
   // ── Scroll ──
   const progress = document.getElementById("progress");
+  const heroImg = document.getElementById("heroParallax");
+  const cursorGlow = document.getElementById("cursorGlow");
+  let ticking = false;
+
   const onScroll = () => {
     const y = window.scrollY;
     const max = document.documentElement.scrollHeight - window.innerHeight;
     if (progress) progress.style.width = `${max > 0 ? (y / max) * 100 : 0}%`;
     header?.classList.toggle("scrolled", y > 20);
+
+    if (heroImg && !prefersReduced) {
+      heroImg.style.translate = `0 ${Math.min(y * 0.18, 90)}px`;
+    }
 
     const ids = ["about", "featured", "work", "moments", "contact"];
     let current = "";
@@ -513,8 +521,34 @@
       a.classList.toggle("active", a.getAttribute("href") === `#${current}`);
     });
   };
-  window.addEventListener("scroll", onScroll, { passive: true });
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        onScroll();
+        ticking = false;
+      });
+    },
+    { passive: true }
+  );
   onScroll();
+
+  if (!prefersReduced && window.matchMedia("(pointer: fine)").matches && cursorGlow) {
+    document.body.classList.add("has-pointer");
+    window.addEventListener(
+      "pointermove",
+      (e) => {
+        cursorGlow.style.left = `${e.clientX}px`;
+        cursorGlow.style.top = `${e.clientY}px`;
+        cursorGlow.classList.add("is-on");
+      },
+      { passive: true }
+    );
+    document.addEventListener("mouseleave", () => cursorGlow.classList.remove("is-on"));
+  }
 
   // ── Reveal + counters ──
   const animateCount = (el) => {

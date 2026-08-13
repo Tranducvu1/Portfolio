@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Trần Đức Vũ — App & Web Developer tại Đà Nẵng. Mobile app, web product, WordPress. 1+ năm kinh nghiệm." />
   <meta name="author" content="Trần Đức Vũ" />
-  <meta name="theme-color" content="#0d0d0d" />
+  <meta name="theme-color" content="#0c1210" />
   <meta property="og:title" content="Trần Đức Vũ — App & Web Developer" />
   <meta property="og:description" content="Portfolio chuyên nghiệp: Android app, web, WordPress & startup. Đà Nẵng." />
   <meta property="og:url" content="https://tranducvu.info.vn" />
@@ -15,16 +15,18 @@
   <title>Trần Đức Vũ · App & Web Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <div class="progress-bar" id="progress" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
   <div class="preloader" id="preloader">
     <div class="preloader-inner">
       <img src="assets/images/avatar.png" alt="" width="64" height="64" />
       <span>Trần Đức Vũ</span>
+      <div class="preloader-bar"><i></i></div>
     </div>
   </div>
 
@@ -57,49 +59,38 @@
   </header>
 
   <main>
-    <!-- HERO: avatar portrait + brand (no video) -->
     <section class="hero" id="top">
-      <div class="container hero-grid">
-        <div class="hero-visual reveal" data-reveal="scale">
-          <div class="hero-orbit" aria-hidden="true"><span></span></div>
-          <div class="hero-frame">
-            <img src="assets/images/avatar.png" alt="Trần Đức Vũ" width="640" height="800" fetchpriority="high" />
-            <div class="hero-badge">
-              <strong>Open for work</strong>
-              App · Web · WordPress
-            </div>
-          </div>
+      <div class="hero-stage">
+        <div class="hero-media" aria-hidden="true">
+          <img
+            class="hero-media__img"
+            id="heroParallax"
+            src="assets/images/avatar.png"
+            alt=""
+            width="1600"
+            height="2000"
+            fetchpriority="high"
+          />
+          <div class="hero-media__veil"></div>
+          <div class="hero-media__grain"></div>
         </div>
-        <div class="hero-copy reveal" data-reveal="up">
-          <p class="hero-brand">Trần Đức Vũ</p>
-          <h1>App &amp; Web Developer với <em>sản phẩm</em> sẵn sàng ship</h1>
-          <p class="hero-lead">
-            Developer tại Đà Nẵng, hơn 1 năm kinh nghiệm xây mobile app (Google Play),
-            web product và WordPress — từ startup đến thương hiệu.
+        <div class="container hero-content">
+          <p class="hero-brand reveal" data-reveal="up">Trần Đức Vũ</p>
+          <h1 class="reveal" data-reveal="up" data-stagger="1">
+            App &amp; Web Developer<br />
+            <em>sẵn sàng ship</em>
+          </h1>
+          <p class="hero-lead reveal" data-reveal="up" data-stagger="2">
+            Đà Nẵng · Android, web product &amp; WordPress — từ startup đến thương hiệu.
           </p>
-          <div class="hero-actions">
+          <div class="hero-actions reveal" data-reveal="up" data-stagger="3">
             <a class="btn btn-primary magnetic" href="#work">Xem dự án</a>
             <a class="btn btn-ghost magnetic" href="myblog.html">MyBlog</a>
-          </div>
-          <div class="hero-meta">
-            <div>
-              <strong>26/07/2003</strong>
-              <span>Đà Nẵng, Việt Nam</span>
-            </div>
-            <div>
-              <strong>1+ năm</strong>
-              <span>Kinh nghiệm app / web</span>
-            </div>
-            <div>
-              <strong>Open for work</strong>
-              <span>Portfolio chính thức</span>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- STATS -->
     <section class="section stats-section">
       <div class="container">
         <div class="stats">

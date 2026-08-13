@@ -527,6 +527,19 @@
   );
   onScroll();
 
+  // Keep hero background video muted + playing
+  const heroVideo = document.querySelector(".hero-media__video");
+  if (heroVideo instanceof HTMLVideoElement) {
+    heroVideo.muted = true;
+    heroVideo.defaultMuted = true;
+    heroVideo.volume = 0;
+    const tryPlay = () => heroVideo.play().catch(() => {});
+    tryPlay();
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) tryPlay();
+    });
+  }
+
   if (!prefersReduced && window.matchMedia("(pointer: fine)").matches && cursorGlow) {
     document.body.classList.add("has-pointer");
     window.addEventListener(

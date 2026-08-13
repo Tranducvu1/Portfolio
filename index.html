@@ -62,15 +62,18 @@
     <section class="hero" id="top">
       <div class="hero-stage">
         <div class="hero-media" aria-hidden="true">
-          <img
-            class="hero-media__img"
+          <video
+            class="hero-media__img hero-media__video"
             id="heroParallax"
-            src="assets/images/avatar.png"
-            alt=""
-            width="1600"
-            height="2000"
-            fetchpriority="high"
-          />
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            poster="assets/images/hero-poster.jpg"
+          >
+            <source src="assets/videos/hero-bg.mp4" type="video/mp4" />
+          </video>
           <div class="hero-media__veil"></div>
           <div class="hero-media__grain"></div>
         </div>

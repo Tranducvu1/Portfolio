@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dự án nổi bật và portfolio theo danh mục — Trần Đức Vũ." />
+  <meta name="theme-color" content="#e8ece9" />
+  <link rel="canonical" href="https://tranducvu.info.vn/work" />
+  <link rel="icon" href="assets/images/avatar.png" type="image/png" />
+  <title>Dự án · Trần Đức Vũ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="page-inner">
+  <div class="progress-bar" id="progress" aria-hidden="true"></div>
+
+  <header class="site-header" id="header">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/avatar.png" alt="Trần Đức Vũ" width="40" height="40" />
+        <span>Trần Đức Vũ</span>
+      </a>
+      <nav class="nav-links" id="nav" aria-label="Chính">
+        <a href="about.html">Giới thiệu</a>
+        <a href="work.html" class="active" aria-current="page">Dự án</a>
+        <a href="moments.html">Khoảnh khắc</a>
+        <a href="myblog.html">MyBlog</a>
+        <a href="contact.html">Liên hệ</a>
+      </nav>
+      <a class="btn btn-primary btn-sm header-cta" href="tel:0345934782">0345 934 782</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false"><span></span></button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="about.html">Giới thiệu</a>
+      <a href="work.html" class="active">Dự án</a>
+      <a href="moments.html">Khoảnh khắc</a>
+      <a href="myblog.html">MyBlog</a>
+      <a href="contact.html">Liên hệ</a>
+      <a class="btn btn-primary" href="tel:0345934782">Gọi 0345 934 782</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <p class="eyebrow reveal">Portfolio</p>
+        <h1 class="reveal">Dự án &amp; sản phẩm</h1>
+        <p class="page-banner__lead reveal">Cover crawl từ website / Google Play thật.</p>
+      </div>
+    </section>
+
+    <section class="section" id="featured">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Selected work</span>
+          <h2>Nổi bật</h2>
+        </div>
+        <div class="featured-list" id="featuredList"></div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Tất cả</span>
+          <h2>Theo danh mục</h2>
+          <p>App, tattoo, quán ăn, cửa hàng, spa, phòng khám…</p>
+        </div>
+        <div class="filter-bar reveal" id="filters" role="tablist" aria-label="Lọc danh mục"></div>
+        <div class="work-grid" id="workGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/images/avatar.png" alt="" width="40" height="40" />
+        <div>
+          <strong>Trần Đức Vũ</strong>
+          <span>App &amp; Web Developer · Đà Nẵng</span>
+        </div>
+      </a>
+      <p>© <span id="year"></span> tranducvu.info.vn</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

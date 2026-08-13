@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Trần Đức Vũ — App & Web Developer tại Đà Nẵng. Mobile app, web product, WordPress. 1+ năm kinh nghiệm." />
+  <meta name="description" content="Trần Đức Vũ — App & Web Developer tại Đà Nẵng. Mobile app, web product, WordPress." />
   <meta name="author" content="Trần Đức Vũ" />
   <meta name="theme-color" content="#0c1210" />
   <meta property="og:title" content="Trần Đức Vũ — App & Web Developer" />
-  <meta property="og:description" content="Portfolio chuyên nghiệp: Android app, web, WordPress & startup. Đà Nẵng." />
+  <meta property="og:description" content="Portfolio: Android app, web, WordPress & startup. Đà Nẵng." />
   <meta property="og:url" content="https://tranducvu.info.vn" />
   <meta property="og:image" content="https://tranducvu.info.vn/assets/images/avatar.png" />
   <link rel="canonical" href="https://tranducvu.info.vn" />
@@ -15,10 +15,10 @@
   <title>Trần Đức Vũ · App & Web Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+<body class="page-home">
   <div class="progress-bar" id="progress" aria-hidden="true"></div>
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
 
@@ -32,16 +32,16 @@
 
   <header class="site-header" id="header">
     <div class="container nav-inner">
-      <a class="brand" href="#top">
+      <a class="brand" href="index.html" aria-current="page">
         <img src="assets/images/avatar.png" alt="Trần Đức Vũ" width="40" height="40" />
         <span>Trần Đức Vũ</span>
       </a>
       <nav class="nav-links" id="nav" aria-label="Chính">
-        <a href="#about">Giới thiệu</a>
-        <a href="#featured">Nổi bật</a>
-        <a href="#work">Dự án</a>
+        <a href="about.html">Giới thiệu</a>
+        <a href="work.html">Dự án</a>
+        <a href="moments.html">Khoảnh khắc</a>
         <a href="myblog.html">MyBlog</a>
-        <a href="#contact">Liên hệ</a>
+        <a href="contact.html">Liên hệ</a>
       </nav>
       <a class="btn btn-primary btn-sm header-cta" href="tel:0345934782">0345 934 782</a>
       <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false">
@@ -49,11 +49,11 @@
       </button>
     </div>
     <div class="mobile-nav" id="mobileNav">
-      <a href="#about">Giới thiệu</a>
-      <a href="#featured">Nổi bật</a>
-      <a href="#work">Dự án</a>
+      <a href="about.html">Giới thiệu</a>
+      <a href="work.html">Dự án</a>
+      <a href="moments.html">Khoảnh khắc</a>
       <a href="myblog.html">MyBlog</a>
-      <a href="#contact">Liên hệ</a>
+      <a href="contact.html">Liên hệ</a>
       <a class="btn btn-primary" href="tel:0345934782">Gọi 0345 934 782</a>
     </div>
   </header>
@@ -84,7 +84,7 @@
             Đà Nẵng · Android, web product &amp; WordPress — từ startup đến thương hiệu.
           </p>
           <div class="hero-actions reveal" data-reveal="up" data-stagger="3">
-            <a class="btn btn-primary magnetic" href="#work">Xem dự án</a>
+            <a class="btn btn-primary magnetic" href="work.html">Xem dự án</a>
             <a class="btn btn-ghost magnetic" href="myblog.html">MyBlog</a>
           </div>
         </div>
@@ -111,128 +111,20 @@
             <span>Năm kinh nghiệm</span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section about" id="about">
-      <div class="container about-grid">
-        <div class="about-copy reveal">
-          <span class="eyebrow">Giới thiệu</span>
-          <h2>Làm rõ — ship thật — tối ưu lâu dài</h2>
-          <p>
-            Mình là <strong>Trần Đức Vũ</strong>, sinh ngày 26/07/2003, đang làm việc tại
-            <strong>Đà Nẵng</strong>. Tập trung vào Android (Kotlin / Compose), web product
-            và WordPress — ưu tiên UX gọn, performance và giao diện chuyên nghiệp.
-          </p>
-          <ul class="about-list">
-            <li><span>Họ tên</span><strong>Trần Đức Vũ</strong></li>
-            <li><span>Ngày sinh</span><strong>26 / 07 / 2003</strong></li>
-            <li><span>Điện thoại</span><strong><a href="tel:0345934782">0345 934 782</a></strong></li>
-            <li><span>Địa điểm</span><strong>Đà Nẵng, Việt Nam</strong></li>
-          </ul>
-          <div class="skill-row">
-            <span>Kotlin / Android</span>
-            <span>Jetpack Compose</span>
-            <span>React / Web</span>
-            <span>WordPress</span>
-            <span>UI Implementation</span>
-            <span>REST API</span>
-            <span>SEO</span>
-          </div>
+        <div class="home-tabs reveal">
+          <a class="home-tab" href="about.html"><span>01</span>Giới thiệu</a>
+          <a class="home-tab" href="work.html"><span>02</span>Dự án</a>
+          <a class="home-tab" href="moments.html"><span>03</span>Khoảnh khắc</a>
+          <a class="home-tab" href="myblog.html"><span>04</span>MyBlog</a>
+          <a class="home-tab" href="contact.html"><span>05</span>Liên hệ</a>
         </div>
-        <div class="about-visual reveal" data-reveal="right">
-          <img src="assets/images/avatar.png" alt="Trần Đức Vũ" loading="lazy" />
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED -->
-    <section class="section" id="featured">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Selected work</span>
-          <h2>Dự án nổi bật</h2>
-          <p>Ảnh cover tự crawl từ website / Google Play thật (live screenshot).</p>
-        </div>
-        <div class="featured-list" id="featuredList"></div>
-      </div>
-    </section>
-
-    <!-- ALL WORK BY CATEGORY -->
-    <section class="section work-section" id="work">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Portfolio</span>
-          <h2>Work theo danh mục</h2>
-          <p>9 lĩnh vực theo loại hình — app, tattoo, quán ăn, cửa hàng, spa, phòng khám…</p>
-        </div>
-        <div class="filter-bar reveal" id="filters" role="tablist" aria-label="Lọc danh mục"></div>
-        <div class="work-grid" id="workGrid"></div>
-      </div>
-    </section>
-
-    <!-- Khoảnh khắc: personal photos + videos -->
-    <section class="section blog-section" id="moments">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Khoảnh khắc</span>
-          <h2>Ảnh &amp; video cá nhân</h2>
-          <p>
-            Life, travel &amp; behind the scenes.
-            Đọc chữ dài hơn tại <a href="myblog.html" style="color: var(--accent); font-weight: 700;">MyBlog · SkyBooks</a>.
-          </p>
-        </div>
-
-        <div class="blog-gallery" id="blogGallery"></div>
-
-        <div class="video-block reveal">
-          <div class="video-copy">
-            <span class="eyebrow">Video</span>
-            <h3>Behind the scenes</h3>
-            <p>Clip thực tế — showcase riêng trên trang chủ.</p>
-          </div>
-          <div class="video-grid">
-            <div class="video-frame">
-              <video controls playsinline preload="metadata" poster="assets/images/blog/about-stairs.png">
-                <source src="assets/videos/reel-01.mp4" type="video/mp4" />
-              </video>
-            </div>
-            <div class="video-frame">
-              <video controls playsinline preload="metadata" poster="assets/images/blog/city-skyline.png">
-                <source src="assets/videos/reel-02.mp4" type="video/mp4" />
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <div class="container contact-wrap reveal">
-        <div class="contact-copy">
-          <span class="eyebrow">Liên hệ</span>
-          <h2>Cùng ship sản phẩm tiếp theo</h2>
-          <p>App Android, web, WordPress hay landing startup — nhắn mình qua form hoặc gọi trực tiếp.</p>
-          <ul class="contact-meta">
-            <li><span>Phone</span><a href="tel:0345934782">0345 934 782</a></li>
-            <li><span>Location</span><strong>Đà Nẵng, Việt Nam</strong></li>
-          </ul>
-        </div>
-        <form class="contact-form" id="contactForm">
-          <label>Họ tên<input name="name" required placeholder="Tên của bạn" autocomplete="name" /></label>
-          <label>Email / SĐT<input name="contact" required placeholder="email hoặc số điện thoại" /></label>
-          <label>Nội dung<textarea name="message" rows="5" required placeholder="Mô tả ngắn dự án..."></textarea></label>
-          <button type="submit" class="btn btn-primary btn-full">Gửi tin nhắn</button>
-        </form>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand" href="#top">
+      <a class="brand" href="index.html">
         <img src="assets/images/avatar.png" alt="" width="40" height="40" />
         <div>
           <strong>Trần Đức Vũ</strong>

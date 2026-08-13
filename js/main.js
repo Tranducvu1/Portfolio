@@ -461,24 +461,25 @@
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
-  // ── Preloader ──
+  // ── Preloader (home only) ──
   const preloader = document.getElementById("preloader");
-  const finishLoad = () => {
-    document.body.classList.remove("is-loading");
-    preloader?.classList.add("is-done");
-  };
-  document.body.classList.add("is-loading");
-  if (prefersReduced) finishLoad();
-  else {
-    window.addEventListener("load", () => setTimeout(finishLoad, 700), { once: true });
-    setTimeout(finishLoad, 1800);
+  if (preloader) {
+    const finishLoad = () => {
+      document.body.classList.remove("is-loading");
+      preloader.classList.add("is-done");
+    };
+    document.body.classList.add("is-loading");
+    if (prefersReduced) finishLoad();
+    else {
+      window.addEventListener("load", () => setTimeout(finishLoad, 700), { once: true });
+      setTimeout(finishLoad, 1800);
+    }
   }
 
   // ── Nav mobile ──
   const header = document.getElementById("header");
   const navToggle = document.getElementById("navToggle");
   const mobileNav = document.getElementById("mobileNav");
-  const navLinks = document.getElementById("nav");
 
   navToggle?.addEventListener("click", () => {
     const open = navToggle.getAttribute("aria-expanded") === "true";
@@ -510,16 +511,6 @@
     if (heroImg && !prefersReduced) {
       heroImg.style.translate = `0 ${Math.min(y * 0.18, 90)}px`;
     }
-
-    const ids = ["about", "featured", "work", "moments", "contact"];
-    let current = "";
-    ids.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el && y + 140 >= el.offsetTop) current = id;
-    });
-    navLinks?.querySelectorAll("a").forEach((a) => {
-      a.classList.toggle("active", a.getAttribute("href") === `#${current}`);
-    });
   };
 
   window.addEventListener(
